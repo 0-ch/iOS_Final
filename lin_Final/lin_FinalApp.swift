@@ -11,7 +11,12 @@ import SwiftUI
 struct lin_FinalApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if Bool.random(){
+                ContentView()
+            }else{
+                Text("login")
+            }
+            
         }
     }
 }
