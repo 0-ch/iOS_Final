@@ -9,10 +9,24 @@
 import SwiftUI
 
 struct HomeView: View {
+
     var body: some View {
-        List{
-            PostRow();
-        }
+                List{
+        Text("A")
+        
+        //            PostRow();
+                }.onAppear(perform: {
+                    var request = URLRequest(url: URL(string: "https://dummyapi.io/data/v1/post")!)
+                    request.httpMethod = "GET"
+                    request.setValue("63875387080315490a2416a4", forHTTPHeaderField:"app-id")
+                    URLSession.shared.dataTask(with: request) { data, response, error in
+                    if let data = data,
+                    let content = String(data: data, encoding: .utf8) {
+                    print(content)
+                        print(content.limit)
+                    }
+                    }.resume()
+                })
     }
 }
 

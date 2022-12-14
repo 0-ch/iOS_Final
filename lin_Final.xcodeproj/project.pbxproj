@@ -13,6 +13,9 @@
 		595147B12924D78E00A6B8C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 595147B02924D78E00A6B8C2 /* Preview Assets.xcassets */; };
 		595147BB29406F3B00A6B8C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595147BA29406F3B00A6B8C2 /* HomeView.swift */; };
 		595147BF29406FA900A6B8C2 /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595147BE29406FA900A6B8C2 /* PostRow.swift */; };
+		595147C32949DC4700A6B8C2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595147C22949DC4700A6B8C2 /* LoginView.swift */; };
+		595147C62949E6A000A6B8C2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595147C52949E6A000A6B8C2 /* API.swift */; };
+		595147CA2949F46D00A6B8C2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595147C92949F46D00A6B8C2 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		595147B22924D78E00A6B8C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		595147BA29406F3B00A6B8C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		595147BE29406FA900A6B8C2 /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
+		595147C22949DC4700A6B8C2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		595147C52949E6A000A6B8C2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		595147C92949F46D00A6B8C2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,12 @@
 				595147BE29406FA900A6B8C2 /* PostRow.swift */,
 				595147A92924D78600A6B8C2 /* lin_FinalApp.swift */,
 				595147AB2924D78600A6B8C2 /* ContentView.swift */,
+				595147C22949DC4700A6B8C2 /* LoginView.swift */,
+				595147C52949E6A000A6B8C2 /* API.swift */,
 				595147AD2924D78E00A6B8C2 /* Assets.xcassets */,
 				595147B22924D78E00A6B8C2 /* Info.plist */,
 				595147AF2924D78E00A6B8C2 /* Preview Content */,
+				595147C92949F46D00A6B8C2 /* SignUpView.swift */,
 			);
 			path = lin_Final;
 			sourceTree = "<group>";
@@ -147,6 +156,9 @@
 				595147BB29406F3B00A6B8C2 /* HomeView.swift in Sources */,
 				595147AC2924D78600A6B8C2 /* ContentView.swift in Sources */,
 				595147BF29406FA900A6B8C2 /* PostRow.swift in Sources */,
+				595147CA2949F46D00A6B8C2 /* SignUpView.swift in Sources */,
+				595147C32949DC4700A6B8C2 /* LoginView.swift in Sources */,
+				595147C62949E6A000A6B8C2 /* API.swift in Sources */,
 				595147AA2924D78600A6B8C2 /* lin_FinalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
