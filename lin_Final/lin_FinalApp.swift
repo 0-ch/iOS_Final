@@ -9,14 +9,15 @@ import SwiftUI
 
 @main
 struct lin_FinalApp: App {
+    @StateObject private var loginData = Login()
     var body: some Scene {
         WindowGroup {
-//            if Bool.random(){
-//                ContentView()
-//            }else{
-//                LoginView()
-//            }
-            HomeView()
+            if loginData.token == ""
+            {
+                LoginView().environmentObject(loginData)
+            }else{
+                ContentView().environmentObject(loginData)
+            }
         }
     }
 }

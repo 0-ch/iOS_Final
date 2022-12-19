@@ -12,6 +12,9 @@ struct ContentView: View {
         TabView{
             HomeView()
                 .tabItem { Image(systemName: "house")}
+            SearchView().tabItem{ Image(systemName:"magnifyingglass")}
+            PostView().tabItem{Image(systemName:"plus")};
+            ProfileView().tabItem{Image(systemName:"person")}
         }
     }
 }
