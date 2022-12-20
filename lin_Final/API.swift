@@ -6,16 +6,16 @@
 //
 import Foundation
 
-struct  CreatedSessionBody:Encodable {
+struct  CreatedSessionBody:Codable {
     public let user:SessionUser
 }
 
-struct SessionUser :Encodable{
+struct SessionUser :Codable{
     public let login: String
     public let password: String
 }
 
-struct  CreateSessionResponse:Decodable {
+struct  CreateSessionResponse:Codable {
     public let Token: String
     public let login: String
     public let email:String
@@ -27,17 +27,17 @@ struct  CreateSessionResponse:Decodable {
     }
 }
 
-struct  CreatedUsersBody:Encodable {
+struct  CreatedUsersBody:Codable {
     public let user:CreatedUsers
 }
 
-struct CreatedUsers:Encodable {
+struct CreatedUsers:Codable {
     let login: String
     let email: String
     let password: String
 }
 
-struct  CreatedUsersResponse:Decodable {
+struct  CreatedUsersResponse:Codable {
     let Token: String
     let login: String
     enum CodingKeys:String,CodingKey{
@@ -46,27 +46,52 @@ struct  CreatedUsersResponse:Decodable {
     }
 }
 
-struct PostResponse{
-    let data :[Post]
+struct CreatePostResponse:Codable{
+    let data:[Post]
     let total: Int
     let page: Int
     let limit: Int
+    
+//    init(){
+//        data = [Post()]
+//        total = 0
+//        page = 0
+//        limit = 0
+//    }
 }
 
 
-struct Post {
-    let id : String
+struct Post:Codable ,Identifiable{
+    
+    let id: String
     let image: String
     let likes: Int
     let tags: [String]
-    let text : String
+    let text: String
     let publishDate : String
-    let owner: [Owner]
+    let owner: Owner
+    
+    init(){
+        id = ""
+        image = ""
+        likes = 0
+        tags = []
+        text = ""
+        publishDate = ""
+        owner = Owner()
+    }
 }
-struct Owner {
+struct Owner:Codable {
     let id: String
     let title: String
     let firstName: String
     let lastName:String
     let picture: String
+    init(){
+        id = ""
+        title = ""
+        firstName = ""
+        lastName = ""
+        picture = ""
+    }
 }

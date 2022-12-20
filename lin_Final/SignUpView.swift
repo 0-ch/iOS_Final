@@ -40,7 +40,7 @@ struct SignUpView: View {
                         if let data = data{
                             do{
                                 let content = String(data: data, encoding: .utf8)
-                                print("content=\(content)")
+                                print("content=\(String(describing: content))")
                                 let decoder = JSONDecoder()
                                 let createdUsersResponse = try decoder.decode(CreatedUsersResponse.self, from: data)
                                 print("CCCCCC")

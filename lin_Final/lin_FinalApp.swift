@@ -10,13 +10,16 @@ import SwiftUI
 @main
 struct lin_FinalApp: App {
     @StateObject private var loginData = Login()
+    @StateObject private var dummyFetcher = DummyFetcher()
     var body: some Scene {
         WindowGroup {
             if loginData.token == ""
             {
                 SignInView().environmentObject(loginData)
+                    .environmentObject(dummyFetcher)
             }else{
                 ContentView().environmentObject(loginData)
+                    .environmentObject(dummyFetcher)
             }
         }
     }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UIKit
+import AlertX
 struct SignInView: View {
     @EnvironmentObject var loginData:Login
     @State var email:String=""
@@ -40,7 +41,7 @@ struct SignInView: View {
                         if let data = data{
                             do{
                                 let content = String(data: data, encoding: .utf8)
-                                print("content=\(content)")
+                                print("content=\(String(describing: content))")
                                 let decoder = JSONDecoder()
                                 let createSessionResponse = try decoder.decode(CreateSessionResponse.self, from: data)
                                 print("CCCCCC")
@@ -62,17 +63,26 @@ struct SignInView: View {
                     }.resume()
                 }, label: {
                     Text("登入")
-                }).alert(isPresented: $showingAlert, content: {
+                })
+                //                .alert(isPresented: $showingAlert, content: {
+                //                    switch activeAlert{
+                //                    case .login:
+                //                        return                        Alert(title:  Text("帳號或密碼錯誤"))
+                //
+                //                    case .net:
+                //                        return Alert(title: Text("網路錯誤"))
+                //                    }
+                //                })
+                .alertX(isPresented: $showingAlert, content: { () -> AlertX in
                     switch activeAlert{
                     case .login:
-                        return                        Alert(title:  Text("帳號或密碼錯誤"))
+                        return AlertX(title: Text("信箱或密碼錯誤"), theme: .wine(withTransparency: true, roundedCorners: true),
+                                      animation: .classicEffect())
                     case .net:
-                        return Alert(title: Text("網路錯誤"))
+                        return AlertX(title: Text("網路錯誤"), theme: .wine(withTransparency: true, roundedCorners: true),
+                                      animation: .classicEffect())
                     }
                 })
-                //                .alert(isPresented: $showingNetAlert, content: {
-                //                    Alert(title: Text("網路錯誤"))
-                //                })
                 .frame(width: 100, height: 50, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.blue)
