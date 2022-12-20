@@ -14,7 +14,7 @@ struct lin_FinalApp: App {
         WindowGroup {
             if loginData.token == ""
             {
-                LoginView().environmentObject(loginData)
+                SignInView().environmentObject(loginData)
             }else{
                 ContentView().environmentObject(loginData)
             }

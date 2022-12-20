@@ -7,12 +7,12 @@
 
 import SwiftUI
 import UIKit
-struct LoginView: View {
+struct SignInView: View {
     @EnvironmentObject var loginData:Login
     @State var email:String=""
     @State var password:String=""
-    @State private var showingLoginAlert = false
     @State private var showingAlert = false
+    @State private var activeAlert : ActiveAlert = .login
     var body: some View {
         NavigationView{
             VStack{
@@ -24,7 +24,7 @@ struct LoginView: View {
                 SecureField("密碼",text: $password).textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 300, height: 100, alignment: .center)
                 Button(action: {
-               
+                    
                     let url = URL(string: "https://favqs.com/api/session")!
                     var request = URLRequest(url: url)
                     request.httpMethod = "POST"
@@ -51,15 +51,28 @@ struct LoginView: View {
                             }catch{
                                 print("EERRRORRRR")
                                 print(error)
-                                showingLoginAlert = true
+                                showingAlert = true
+                                activeAlert = .login
                             }
+                        }else if let error = error{
+                            print("NETTTT")
+                            showingAlert = true
+                            activeAlert = .net
                         }
                     }.resume()
                 }, label: {
                     Text("登入")
-                }).alert(isPresented: $showingLoginAlert, content: {
-                    Alert(title: Text("登入錯誤"))
+                }).alert(isPresented: $showingAlert, content: {
+                    switch activeAlert{
+                    case .login:
+                        return                        Alert(title:  Text("帳號或密碼錯誤"))
+                    case .net:
+                        return Alert(title: Text("網路錯誤"))
+                    }
                 })
+                //                .alert(isPresented: $showingNetAlert, content: {
+                //                    Alert(title: Text("網路錯誤"))
+                //                })
                 .frame(width: 100, height: 50, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.blue)
@@ -79,6 +92,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        SignInView()
     }
 }
