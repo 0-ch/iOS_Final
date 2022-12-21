@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class  Login:ObservableObject {
     @Published var token :String = ""
     @Published var login :String = ""
+//    @AppStorage("token") var token :String = ""
+//    @AppStorage("login") var login :String = ""
 }

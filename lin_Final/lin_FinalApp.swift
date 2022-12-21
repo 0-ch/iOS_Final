@@ -11,16 +11,39 @@ import SwiftUI
 struct lin_FinalApp: App {
     @StateObject private var loginData = Login()
     @StateObject private var dummyFetcher = DummyFetcher()
+    @StateObject private var dummySaver = DummySaver()
+    @StateObject  var language = Language()
     var body: some Scene {
         WindowGroup {
-            if loginData.token == ""
-            {
-                SignInView().environmentObject(loginData)
-                    .environmentObject(dummyFetcher)
+            if language.data == ""{
+                HStack{
+                    Button(action: {
+                        language.data = "en"
+                    }, label: {
+                        Text("English").font(.title)
+                    })
+                    Text("or")
+                    Button(action: {
+                        language.data = "zh-Hant"
+                    }, label: {
+                        Text("Chinese").font(.title)
+                    })
+                }
             }else{
-                ContentView().environmentObject(loginData)
-                    .environmentObject(dummyFetcher)
+                if loginData.token == ""
+                {
+                    SignInView().environmentObject(loginData)
+                        .environmentObject(dummyFetcher)
+                        .environmentObject(dummySaver)
+                        .environment(\.locale, .init(identifier: language.data))
+                }else{
+                    ContentView().environmentObject(loginData)
+                        .environmentObject(dummyFetcher)
+                        .environmentObject(dummySaver)
+                        .environment(\.locale, .init(identifier: language.data))
+                }
             }
+
         }
     }
 }

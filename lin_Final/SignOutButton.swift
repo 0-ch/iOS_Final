@@ -16,7 +16,7 @@ struct SignOutButton: View {
             Button(action: {
                 loginData.token=""
             }, label: {
-                Text("登出")
+                Text("Sign Out")
             })                .frame(width: 100, height: 50, alignment: .center)
             .foregroundColor(.white)
             .background(Color.red)
@@ -29,6 +29,6 @@ struct SignOutButton: View {
 
 struct SignOutView_Previews: PreviewProvider {
     static var previews: some View {
-        SignOutButton()
+        SignOutButton().environment(\.locale, .init(identifier: "zh-Hant"))
     }
 }

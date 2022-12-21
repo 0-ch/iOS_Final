@@ -52,12 +52,12 @@ struct CreatePostResponse:Codable{
     let page: Int
     let limit: Int
     
-//    init(){
-//        data = [Post()]
-//        total = 0
-//        page = 0
-//        limit = 0
-//    }
+    //    init(){
+    //        data = [Post()]
+    //        total = 0
+    //        page = 0
+    //        limit = 0
+    //    }
 }
 
 
@@ -81,6 +81,28 @@ struct Post:Codable ,Identifiable{
         owner = Owner()
     }
 }
+
+struct PostDetail:Codable{
+    let id: String
+    let image: String
+    let likes: Int
+    let link:String?
+    let tags: [String]
+    let text: String
+    let publishDate : String
+    let owner: Owner
+    init(){
+        id = ""
+        image = ""
+        likes = 0
+        link = ""
+        tags = []
+        text = ""
+        publishDate = ""
+        owner = Owner()
+    }
+}
+
 struct Owner:Codable {
     let id: String
     let title: String
@@ -93,5 +115,34 @@ struct Owner:Codable {
         firstName = ""
         lastName = ""
         picture = ""
+    }
+}
+
+struct CreatePostCommentResponse:Codable{
+    let data:[Comment]
+    let total: Int
+    let page: Int
+    let limit: Int
+    
+    init(){
+        data = [Comment()]
+        total = 0
+        page = 0
+        limit = 0
+    }
+}
+
+struct Comment:Codable, Identifiable {
+    let id:String
+    let message:String
+    let owner:Owner
+    let post:String
+    let publishDate:String
+    init() {
+        id = ""
+        message = ""
+        owner = Owner()
+        post = ""
+        publishDate = ""
     }
 }

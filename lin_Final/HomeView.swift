@@ -12,6 +12,9 @@ struct HomeView: View {
     @EnvironmentObject var loginData:Login
     let content:String=""
     @EnvironmentObject var dummyFetcher : DummyFetcher
+    @State var now_page = 0
+    @State var now_limit = 10
+    
     var body: some View {
         
         ZStack{
@@ -19,12 +22,42 @@ struct HomeView: View {
             
             VStack{
                 Text("Dummy Community").bold()
-                NavigationView {
+                NavigationView{
                     List{
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                if now_page > 100{
+                                    now_page = 0
+                                }else{
+                                    now_page = now_page + 10
+                                }
+                                now_limit = 10
+                                dummyFetcher.getPost(page: now_page, limit: now_limit)
+                            }, label: {
+                                Image(systemName:"arrow.clockwise")
+                            })
+                            Spacer()
+                        }
+                        
                         ForEach(dummyFetcher.posts) { post in
                             PostRow(post: post).listRowInsets(EdgeInsets())
                         }
-                    }.onAppear(perform: {
+                        
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                now_limit = now_limit + 10
+                                dummyFetcher.getPost(page: now_page, limit: now_limit)
+                            }, label: {
+                                Image(systemName:"ellipsis")
+                            })
+                            Spacer()
+                        }
+                    }
+                    .onAppear(perform: {
+                        dummyFetcher.getPost(page: 0, limit: 10)
+                        configureBackground()
                     })
                 }
             }

@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  lin_Final
+
+  Created by User01 on 2022/12/21.
+  
+*/
+
+"Dummy Community" = "虛擬社區";
+"email" = "信箱";
+"password" = "密碼";
+"Sign In" = "登入";
+"Sign Up" = "註冊";
+"user name" = "使用者名稱";
+"likes" = "喜歡";
+"like" = "喜歡";
+"Email or Password Error" = "信箱或密碼錯誤";
+"Internet Error" = "網路錯誤";
+"Sign Up Error" = "註冊錯誤";
+"SEARCH" = "搜尋";
+"Search by tag" = "用標籤搜尋";
+"NEW POST" = "新的貼文";
+"Loading..." = "載入中...";
+"Please remit USD 1,000 to (812) 2888-10-1172686-7 to upgrade to a premium account and use the posting function" = "請匯款1000美金至(812)2888-10-1172686-7即可升級成高級帳戶使用發文功能";
+"OK" = "好";
+"COLLECT" = "收藏";
+"Collect!" = "收藏起來！";
+"Cancel Favorite" = "取消收藏";
+"SETTING" = "設定";
+"Change Avatar" = "更換大頭貼";
+"Share Creator's Github" = "分享作者的Github";
+"Sign Out" = "登出";

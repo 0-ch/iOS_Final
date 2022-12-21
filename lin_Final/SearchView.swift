@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State private var searchText = ""
+    @EnvironmentObject var dummyFetcher : DummyFetcher
     var body: some View {
         ZStack{
             LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .trailing, endPoint: .leading).ignoresSafeArea()
             VStack{
                 Text("SEARCH").bold()
-                List{
-                    
+                NavigationView{
+                    List{
+                        TextField("Search by tag", text: $searchText)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        ForEach(dummyFetcher.searchPosts) { post in
+                            PostRow(post: post).listRowInsets(EdgeInsets())
+                        }
+                        
+                        
+                    }
+                }.onChange(of: searchText) { newValue in
+                    dummyFetcher.getSearchPost(searchText: searchText)
                 }
+                
             }
         }
     }

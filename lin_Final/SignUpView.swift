@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import AlertX
 struct SignUpView: View {
     @EnvironmentObject var loginData:Login
     @State var login:String=""
@@ -20,10 +20,10 @@ struct SignUpView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .frame(height: 100, alignment: .center)
-                TextField("使用者名稱",text: $login).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("user name",text: $login).textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 300, height: 100, alignment: .center)
-                TextField("信箱",text: $email).textFieldStyle(RoundedBorderTextFieldStyle()).frame(width: 300, height: 50, alignment: .center)
-                SecureField("密碼",text: $password).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("email",text: $email).textFieldStyle(RoundedBorderTextFieldStyle()).frame(width: 300, height: 50, alignment: .center)
+                SecureField("password",text: $password).textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 300, height: 100, alignment: .center)
                 Button(action: {
                     let url = URL(string: "https://favqs.com/api/users")!
@@ -58,10 +58,15 @@ struct SignUpView: View {
                     }.resume()
                 }
                 , label: {
-                    Text("註冊")
-                }).alert(isPresented: $showingAlert, content: {
-                    Alert(title: Text("註冊錯誤"))
+                    Text("Sign Up")
+                }).alertX(isPresented: $showingAlert, content: { () -> AlertX in
+                    return AlertX(title: Text("Internet Error"), theme: .wine(withTransparency: true, roundedCorners: true),
+                                  animation: .classicEffect())
+                    
                 })
+//                .alert(isPresented: $showingAlert, content: {
+//                    Alert(title: Text("Sign Up Error"))
+//                })
                 .frame(width: 100, height: 50, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.blue)

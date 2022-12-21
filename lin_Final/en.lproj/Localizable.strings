@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  lin_Final
+
+  Created by User01 on 2022/12/21.
+  
+*/
+
+"Dummy Community" = "Dummy Community";
+"email" = "email";
+"password" = "password";
+"Sign In" = "Sign In";
+"Sign Up" = "Sign Up";
+"user name" = "user name";
+"likes" = "likes";
+"like" = "like";
+"Email or Password Error" = "Email or Password Error";
+"Internet Error" = "Internet Error";
+"Sign Up Error" = "Sign Up Error";
+"SEARCH" = "SEARCH";
+"Search by tag" = "Search by tag";
+"NEW POST" = "NEW POST";
+"Loading..." = "Loading...";
+"Please remit USD 1,000 to (812) 2888-10-1172686-7 to upgrade to a premium account and use the posting function" = "Please remit USD 1,000 to (812) 2888-10-1172686-7 to upgrade to a premium account and use the posting function";
+"OK" = "OK";
+"COLLECT" = "COLLECT";
+"Collect!" = "Collect!";
+"Cancel Favorite" = "Cancel Favorite";
+"SETTTING" = "SETTING";
+"Change Avatar" = "Change Avatar";
+"Share Creator's Github" = "Share Creator's Github";
+"Sign Out" = "Sign Out";

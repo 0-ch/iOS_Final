@@ -21,8 +21,8 @@ struct SignInView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .frame(height: 100, alignment: .center)
-                TextField("信箱",text: $email).textFieldStyle(RoundedBorderTextFieldStyle()).frame(width: 300, height: 50, alignment: .center)
-                SecureField("密碼",text: $password).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("email",text: $email).textFieldStyle(RoundedBorderTextFieldStyle()).frame(width: 300, height: 50, alignment: .center)
+                SecureField("password",text: $password).textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 300, height: 100, alignment: .center)
                 Button(action: {
                     
@@ -55,31 +55,22 @@ struct SignInView: View {
                                 showingAlert = true
                                 activeAlert = .login
                             }
-                        }else if let error = error{
+                        }else if error != nil{
                             print("NETTTT")
                             showingAlert = true
                             activeAlert = .net
                         }
                     }.resume()
                 }, label: {
-                    Text("登入")
+                    Text("Sign In")
                 })
-                //                .alert(isPresented: $showingAlert, content: {
-                //                    switch activeAlert{
-                //                    case .login:
-                //                        return                        Alert(title:  Text("帳號或密碼錯誤"))
-                //
-                //                    case .net:
-                //                        return Alert(title: Text("網路錯誤"))
-                //                    }
-                //                })
                 .alertX(isPresented: $showingAlert, content: { () -> AlertX in
                     switch activeAlert{
                     case .login:
-                        return AlertX(title: Text("信箱或密碼錯誤"), theme: .wine(withTransparency: true, roundedCorners: true),
+                        return AlertX(title: Text("Email or Password Error"), theme: .wine(withTransparency: true, roundedCorners: true),
                                       animation: .classicEffect())
                     case .net:
-                        return AlertX(title: Text("網路錯誤"), theme: .wine(withTransparency: true, roundedCorners: true),
+                        return AlertX(title: Text("Internet Error"), theme: .wine(withTransparency: true, roundedCorners: true),
                                       animation: .classicEffect())
                     }
                 })
@@ -92,7 +83,7 @@ struct SignInView: View {
                 NavigationLink(
                     destination: SignUpView(),
                     label: {
-                        Text("註冊")
+                        Text("Sign Up")
                     })
                 
             }.offset(y: -150.0)
