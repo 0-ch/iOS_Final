@@ -42,6 +42,7 @@
 		59960A752954473900594CB2 /* screenshot-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59960A6F2954473800594CB2 /* screenshot-4.jpg */; };
 		59960A762954473900594CB2 /* screenshot-4拷貝.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59960A702954473900594CB2 /* screenshot-4拷貝.jpg */; };
 		59960A772954473900594CB2 /* screenshot-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59960A712954473900594CB2 /* screenshot-2.jpg */; };
+		59EAE419295453F1007987DB /* 螢幕錄製 2022-12-22 下午4.54.17.mov in Resources */ = {isa = PBXBuildFile; fileRef = 59EAE418295453F1007987DB /* 螢幕錄製 2022-12-22 下午4.54.17.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		59960A6F2954473800594CB2 /* screenshot-4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screenshot-4.jpg"; sourceTree = "<group>"; };
 		59960A702954473900594CB2 /* screenshot-4拷貝.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screenshot-4拷貝.jpg"; sourceTree = "<group>"; };
 		59960A712954473900594CB2 /* screenshot-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screenshot-2.jpg"; sourceTree = "<group>"; };
+		59EAE418295453F1007987DB /* 螢幕錄製 2022-12-22 下午4.54.17.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "螢幕錄製 2022-12-22 下午4.54.17.mov"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				59960A6D2954473800594CB2 /* screenshot-2拷貝3.jpg */,
 				59960A6F2954473800594CB2 /* screenshot-4.jpg */,
 				59960A702954473900594CB2 /* screenshot-4拷貝.jpg */,
+				59EAE418295453F1007987DB /* 螢幕錄製 2022-12-22 下午4.54.17.mov */,
 				59960A4E29532C4700594CB2 /* en.lproj */,
 				59960A4F29532C5B00594CB2 /* zh-Hant.lproj */,
 				595147AF2924D78E00A6B8C2 /* Preview Content */,
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59960A732954473900594CB2 /* screenshot-2拷貝3.jpg in Resources */,
+				59EAE419295453F1007987DB /* 螢幕錄製 2022-12-22 下午4.54.17.mov in Resources */,
 				595147B12924D78E00A6B8C2 /* Preview Assets.xcassets in Resources */,
 				59960A742954473900594CB2 /* screenshot-2拷貝.jpg in Resources */,
 				59960A5629532CB300594CB2 /* Localizable.strings in Resources */,
